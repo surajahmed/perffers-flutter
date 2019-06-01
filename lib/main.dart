@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/QuestionChat/index.dart';
+import 'package:perffers/Screens/AskQuestion/index.dart';
 import 'package:perffers/Screens/Question/index.dart';
 
 void main() => runApp(MaterialApp(
       title: 'Navigation Basics',
       home: MyApp(),
       routes: <String, WidgetBuilder>{
+        '/askQuestion': (BuildContext context) => new AskQuestion(),
         '/questionChat': (BuildContext context) => new QuestionChat(),
         '/questions': (BuildContext context) => new QuestionScreen(),
       },

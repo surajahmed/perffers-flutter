@@ -66,7 +66,11 @@ class QuestionChat extends StatelessWidget {
                       new Container(
                           margin: const EdgeInsets.symmetric(horizontal: 4.0),
                           child: new IconButton(
-                              icon: new Icon(Icons.send), onPressed: () => {})),
+                              icon: new Icon(Icons.send),
+                              onPressed: () => {
+                                    Navigator.of(context)
+                                        .pushNamed('/askQuestion')
+                                  })),
                     ],
                   ),
                 ),
