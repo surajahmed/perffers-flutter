@@ -3,8 +3,10 @@ import 'package:perffers/Screens/QuestionChat/index.dart';
 import 'package:perffers/Screens/AskQuestion/index.dart';
 import 'package:perffers/Screens/Question/index.dart';
 import 'package:perffers/Screens/Login/index.dart';
+import 'package:perffers/state_widget.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(StateWidget(
+        child: MaterialApp(
       title: 'Navigation Basics',
       home: Login(),
       routes: <String, WidgetBuilder>{
@@ -13,7 +15,7 @@ void main() => runApp(MaterialApp(
         '/questions': (BuildContext context) => new QuestionScreen(),
         '/login': (BuildContext context) => new Login(),
       },
-    ));
+    )));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

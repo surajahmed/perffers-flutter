@@ -16,14 +16,14 @@ class GoogleAuthService {
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
 
-    // final FirebaseUser user = await FirebaseAuth.instance.signInWithGoogle(
-    //   accessToken: googleAuth.accessToken,
-    //   idToken: googleAuth.idToken,
-    // );
+    final FirebaseUser user = await FirebaseAuth.instance.signInWithGoogle(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
 
-    final FirebaseUser user = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-            email: "suraj@geekyants.com", password: "goldtree9");
+    // final FirebaseUser user = await FirebaseAuth.instance
+    //     .signInWithEmailAndPassword(
+    //         email: "suraj@geekyants.com", password: "goldtree9");
     // final AuthCredential credential = GoogleAuthProvider.getCredential(
     //   accessToken: googleAuth.accessToken,
     //   idToken: googleAuth.idToken,

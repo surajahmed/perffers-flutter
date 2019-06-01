@@ -20,6 +20,8 @@ class StateWidget extends StatefulWidget {
   // Returns data of the nearest widget _StateDataWidget
   // in the widget tree.
   static _StateWidgetState of(BuildContext context) {
+    print(context.toString() + "::hello");
+
     return (context.inheritFromWidgetOfExactType(_StateDataWidget)
             as _StateDataWidget)
         .data;
@@ -71,6 +73,7 @@ class _StateWidgetState extends State<StateWidget> {
   }
 
   Future<Null> signInWithGoogle() async {
+    signOutOfGoogle();
     if (googleAccount == null) {
       // Start the sign-in process:
       googleAccount = await googleSignIn.signIn();

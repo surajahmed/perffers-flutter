@@ -1,6 +1,12 @@
+import 'dart:math';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/Login/google_sign_in_button.dart';
 import 'package:perffers/state_widget.dart';
+
+import '../../google_login.dart';
+// import 'package:perffers/state_widget.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -24,10 +30,33 @@ class _LoginScreenState extends State<Login> {
 
     Text _buildText() {
       return Text(
-        'Recipes',
+        'Tech Pair',
         style: Theme.of(context).textTheme.headline,
         textAlign: TextAlign.center,
       );
+    }
+
+    String _randomString(int length) {
+      var rand = new Random();
+      var codeUnits = new List.generate(length, (index) {
+        return rand.nextInt(33) + 89;
+      });
+
+      return new String.fromCharCodes(codeUnits);
+    }
+
+    onPressed() {
+      // String randomToken = _randomString(20);
+      try {
+        StateWidget.of(context).signInWithGoogle();
+      } catch (err) {
+        print(err.toString());
+      } finally {
+        Navigator.of(context).pop();
+        Navigator.of(context).pushNamed('/questions');
+        // Navigator.of(context).pushReplacement(
+        // MaterialPageRoute(builder: (context) => Home(randomToken)));
+      }
     }
 
     return Scaffold(
@@ -40,9 +69,8 @@ class _LoginScreenState extends State<Login> {
               _buildText(),
               SizedBox(height: 50.0),
               GoogleSignInButton(
-                // Passing function callback as constructor argument:
-                onPressed: () => StateWidget.of(context).signInWithGoogle(),
-              ),
+                  // Passing function callback as constructor argument:
+                  onPressed: onPressed)
             ],
           ),
         ),
