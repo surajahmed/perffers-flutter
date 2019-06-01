@@ -53,7 +53,7 @@ class _LoginScreenState extends State<Login> {
         print(err.toString());
       } finally {
         Navigator.of(context).pop();
-        Navigator.of(context).pushNamed('/questions');
+        Navigator.of(context).pushNamed('/home');
         // Navigator.of(context).pushReplacement(
         // MaterialPageRoute(builder: (context) => Home(randomToken)));
       }

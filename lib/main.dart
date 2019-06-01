@@ -10,7 +10,7 @@ import 'Screens/MyQuestions/index.dart';
 void main() => runApp(StateWidget(
         child: MaterialApp(
       title: 'Navigation Basics',
-      home: Home(),
+      home: Login(),
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => new Home(),
         '/askQuestion': (BuildContext context) => new AskQuestion(),

@@ -64,7 +64,8 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(child: new Text("Tech Pair"))
+        body:
+            Center(child: new Text("Tech Pair", style: TextStyle(fontSize: 40)))
         // body: Row(
         //   children: <Widget>[
         // RaisedButton(
