@@ -15,7 +15,8 @@ void main() => runApp(StateWidget(
         '/home': (BuildContext context) => new Home(),
         '/askQuestion': (BuildContext context) => new AskQuestion(),
         '/myQuestions': (BuildContext context) => new MyQuestions(),
-        '/questionChat': (BuildContext context) => new QuestionChat(),
+        '/questionChat': (BuildContext context) =>
+            new QuestionChat(question: "", id: ""),
         '/questions': (BuildContext context) => new QuestionScreen(),
         '/login': (BuildContext context) => new Login(),
       },

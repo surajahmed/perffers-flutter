@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class QuestionChat extends StatelessWidget {
-  // This widget is the root of your application.
+class QuestionChat extends StatefulWidget {
+  QuestionChat({Key key, this.question, this.id}) : super(key: key);
+  final String question;
+  final String id;
 
+  @override
+  QuestionChatState createState() =>
+      new QuestionChatState(question: this.question, id: this.id);
+}
+
+class QuestionChatState extends State<QuestionChat> {
+  QuestionChatState({this.question, this.id});
+  // This widget is the root of your application.
+  final String question;
+  final String id;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,9 +29,9 @@ class QuestionChat extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    const ListTile(
+                    ListTile(
                       leading: Icon(Icons.lightbulb_outline),
-                      title: Text('Some random question'),
+                      title: Text(question),
                     ),
                   ],
                 ),
@@ -29,8 +41,7 @@ class QuestionChat extends StatelessWidget {
                     padding: const EdgeInsets.all(10.0),
                     child: StreamBuilder<QuerySnapshot>(
                       stream: Firestore.instance
-                          .collection(
-                              'questions/k5UQFYaq4JV3ggJhQI1a/question_messages')
+                          .collection('questions/' + id + '/question_messages')
                           .orderBy("created_at")
                           .snapshots(),
                       builder: (BuildContext context,
@@ -81,7 +92,7 @@ class QuestionChat extends StatelessWidget {
                                   color: Color.fromRGBO(00, 00, 00, 1),
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.normal),
-                              key: key,
+                              // key: key,
                               obscureText: false,
                               keyboardType: TextInputType.text,
                               onSaved: (String email) {

@@ -16,6 +16,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       stream: Firestore.instance.collection('questions').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
+
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
             return new Text('Loading...');
@@ -71,7 +72,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          new QuestionChat()),
+                                                          new QuestionChat(
+                                                              id: document
+                                                                  .documentID,
+                                                              question: item)),
                                                 );
                                               },
                                               child: const Text(
