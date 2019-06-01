@@ -6,7 +6,7 @@ import 'package:perffers/Screens/Login/index.dart';
 
 void main() => runApp(MaterialApp(
       title: 'Navigation Basics',
-      home: Login(),
+      home: AskQuestion(),
       routes: <String, WidgetBuilder>{
         '/askQuestion': (BuildContext context) => new AskQuestion(),
         '/questionChat': (BuildContext context) => new QuestionChat(),
