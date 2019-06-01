@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/QuestionChat/index.dart';
+import 'package:perffers/Screens/Question/index.dart';
 
 void main() => runApp(MaterialApp(
       title: 'Navigation Basics',
-      home: MyApp(),
+      home: QuestionScreen(),
       routes: <String, WidgetBuilder>{
         '/questionChat': (BuildContext context) => new QuestionChat(),
+        '/questions': (BuildContext context) => new QuestionScreen(),
       },
     ));
 
@@ -14,17 +16,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('First Route'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('Open route'),
-          onPressed: () {
-            Navigator.of(context).pushNamed('/questionChat');
-          },
+        appBar: AppBar(
+          title: Text('First Route'),
         ),
-      ),
-    );
+        body: Row(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Open route'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/questionChat');
+              },
+            ),
+            RaisedButton(
+              child: Text('Questions'),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/questions');
+              },
+            ),
+          ],
+        ));
   }
 }
