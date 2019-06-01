@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/AskQuestion/index.dart';
 import 'package:perffers/Screens/QuestionChat/index.dart';
-import 'package:perffers/Screens/AskQuestion/index.dart';
 
 class QuestionScreen extends StatefulWidget {
   QuestionScreen() : super();
@@ -53,7 +52,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                               BorderRadius.circular(10)),
                                       child: Container(
                                         width: 300,
-                                        height: 450,
+                                        height: 400,
                                         child: Center(
                                             child: Column(
                                           mainAxisAlignment:
@@ -66,7 +65,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                                   fontSize: 20),
                                             ),
                                             RaisedButton(
-                                              color: Colors.teal,
+                                              color: Colors.cyan,
                                               onPressed: () {
                                                 Navigator.push(
                                                   context,
