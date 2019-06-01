@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/AskQuestion/index.dart';
 import 'package:perffers/Screens/Login/index.dart';
+import 'package:perffers/Screens/MyQuestions/index.dart';
 import 'package:perffers/Screens/Question/index.dart';
 
 class Home extends StatelessWidget {
@@ -27,6 +28,14 @@ class Home extends StatelessWidget {
                     style: TextStyle(fontSize: 40.0),
                   ),
                 ),
+              ),
+              ListTile(
+                title: Text("My Questions"),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => MyQuestions()));
+                },
               ),
               ListTile(
                 title: Text("Answer Questions"),

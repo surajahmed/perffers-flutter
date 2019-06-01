@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perffers/Screens/AskQuestion/index.dart';
 import 'package:perffers/Screens/QuestionChat/index.dart';
 
 class QuestionScreen extends StatefulWidget {
@@ -82,9 +83,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    new QuestionChat()), // TODO: change this to ask question
+            MaterialPageRoute(builder: (context) => new AskQuestion()),
           );
         },
         child: Icon(Icons.add),
