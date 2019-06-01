@@ -57,7 +57,11 @@ class MyQuestions extends StatelessWidget {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            new QuestionChat()));
+                                                            new QuestionChat(
+                                                                id: document
+                                                                    .documentID,
+                                                                question: document[
+                                                                    'caption'])));
                                               })),
                                     ],
                                   ),
