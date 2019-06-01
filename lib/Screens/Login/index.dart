@@ -66,7 +66,11 @@ class _LoginScreenState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _buildText(),
+              Text(
+                'Tech Pair',
+                style: Theme.of(context).textTheme.headline,
+                textAlign: TextAlign.center,
+              ),
               SizedBox(height: 50.0),
               GoogleSignInButton(
                   // Passing function callback as constructor argument:

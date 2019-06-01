@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class QuestionChat extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,28 +19,53 @@ class QuestionChat extends StatelessWidget {
                   children: <Widget>[
                     const ListTile(
                       leading: Icon(Icons.lightbulb_outline),
-                      title: Text('The Enchanted Nightingale'),
-                      subtitle: Text('Some random question'),
+                      title: Text('Some random question'),
                     ),
                   ],
                 ),
               ),
               new Flexible(
-                child: Container(),
-                // new FirebaseAnimatedList(
-                //   query: reference,
-                //   padding: const EdgeInsets.all(8.0),
-                //   reverse: true,
-                //   sort: (a, b) => b.key.compareTo(a.key),
-                //   //comparing timestamp of messages to check which one would appear first
-                //   itemBuilder: (_, DataSnapshot messageSnapshot,
-                //       Animation<double> animation) {
-                //     return new ChatMessageListItem(
-                //       messageSnapshot: messageSnapshot,
-                //       animation: animation,
-                //     );
-                //   },
-                // ),
+                child: Container(
+                    padding: const EdgeInsets.all(10.0),
+                    child: StreamBuilder<QuerySnapshot>(
+                      stream: Firestore.instance
+                          .collection(
+                              'questions/k5UQFYaq4JV3ggJhQI1a/question_messages')
+                          .orderBy("created_at")
+                          .snapshots(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                        if (snapshot.hasError)
+                          return new Text('Error: ${snapshot.error}');
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.waiting:
+                            return new Text('Loading...');
+                          default:
+                            return new ListView(
+                              children: snapshot.data.documents
+                                  .map((DocumentSnapshot document) {
+                                return new Container(
+                                  margin: const EdgeInsets.all(5.0),
+                                  child: new Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      new Text("User",
+                                          style: new TextStyle(
+                                              fontSize: 14.0,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold)),
+                                      new Container(
+                                        margin: const EdgeInsets.only(top: 5.0),
+                                        child: new Text(document['message']),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              }).toList(),
+                            );
+                        }
+                      },
+                    )),
               ),
               new Divider(height: 1.0),
               new Container(

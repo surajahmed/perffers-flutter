@@ -14,6 +14,10 @@ class AskQuestion extends StatelessWidget {
           margin: new EdgeInsets.all(20.0),
           child: new Column(
             children: <Widget>[
+              new Text(
+                "Type your question",
+                style: TextStyle(fontSize: 20),
+              ),
               new Container(
                   child: new TextField(
                       maxLines: 6,
