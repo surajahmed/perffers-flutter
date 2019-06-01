@@ -25,7 +25,8 @@ class _LoginScreenState extends State<Login> {
               SizedBox(height: 50.0),
               GoogleSignInButton(
                 // Passing function callback as constructor argument:
-                onPressed: () => StateWidget.of(context).signInWithGoogle(),
+                onPressed: () => Navigator.of(context).pushNamed('/home'),
+                // onPressed: () => StateWidget.of(context).signInWithGoogle(),
               ),
             ],
           ),

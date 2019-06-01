@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perffers/Screens/AskQuestion/index.dart';
+import 'package:perffers/Screens/Login/index.dart';
 import 'package:perffers/Screens/Question/index.dart';
 
 class Home extends StatelessWidget {
@@ -8,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('First Route'),
+          title: Text('Home'),
         ),
         drawer: Drawer(
           child: ListView(
@@ -46,7 +47,9 @@ class Home extends StatelessWidget {
               ListTile(
                 title: Text("Logout"),
                 onTap: () {
-                  // TODO: logout here
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => Login()));
                 },
               ),
             ],
