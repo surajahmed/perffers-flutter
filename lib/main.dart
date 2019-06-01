@@ -7,7 +7,7 @@ import 'package:perffers/Screens/Home/index.dart';
 
 void main() => runApp(MaterialApp(
       title: 'Navigation Basics',
-      home: Login(),
+      home: Home(),
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => new Home(),
         '/askQuestion': (BuildContext context) => new AskQuestion(),
