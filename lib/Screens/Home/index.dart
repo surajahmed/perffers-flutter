@@ -16,8 +16,8 @@ class Home extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               UserAccountsDrawerHeader(
-                accountName: Text("Ashish Rawat"),
-                accountEmail: Text("ashishrawat2911@gmail.com"),
+                accountName: Text("Suraj Ahmed"),
+                accountEmail: Text("suraj@geekyants.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor:
                       Theme.of(context).platform == TargetPlatform.iOS
@@ -64,21 +64,23 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: Row(
-          children: <Widget>[
-            RaisedButton(
-              child: Text('Open route'),
-              onPressed: () {
-                Navigator.of(context).pushNamed('/questionChat');
-              },
-            ),
-            RaisedButton(
-              child: Text('Questions'),
-              onPressed: () {
-                Navigator.of(context).pushNamed('/questions');
-              },
-            ),
-          ],
-        ));
+        body: Center(child: new Text("Tech Pair"))
+        // body: Row(
+        //   children: <Widget>[
+        // RaisedButton(
+        //   child: Text('Open route'),
+        //   onPressed: () {
+        //     Navigator.of(context).pushNamed('/questionChat');
+        //   },
+        // ),
+        // RaisedButton(
+        //   child: Text('Questions'),
+        //   onPressed: () {
+        //     Navigator.of(context).pushNamed('/questions');
+        //   },
+        // ),
+        // ],
+        // )
+        );
   }
 }
