@@ -13,9 +13,8 @@ void main() => runApp(MaterialApp(
         '/home': (BuildContext context) => new Home(),
         '/askQuestion': (BuildContext context) => new AskQuestion(),
         '/myQuestions': (BuildContext context) => new MyQuestions(),
-        '/questionChat': (BuildContext context) => new QuestionChat(
-              question: "",
-            ),
+        '/questionChat': (BuildContext context) =>
+            new QuestionChat(question: "", id: ""),
         '/questions': (BuildContext context) => new QuestionScreen(),
         '/login': (BuildContext context) => new Login(),
       },
