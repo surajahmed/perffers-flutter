@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "771716291278",
+    "firebase_url": "https://tech-pair.firebaseio.com",
+    "project_id": "tech-pair",
+    "storage_bucket": "tech-pair.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771716291278:android:e25136f1b2e688eb",
+        "android_client_info": {
+          "package_name": "com.example.perffers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771716291278-sncd3b1sovbe5ejtn5t8fns03ggk4vck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhod1rADrQUw4LNQg0kWYJA0_rLfvL1_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771716291278-sncd3b1sovbe5ejtn5t8fns03ggk4vck.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "771716291278-4fg7rjd8qab5vv93k0bnpf7r7o1ks7tm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.perffers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
